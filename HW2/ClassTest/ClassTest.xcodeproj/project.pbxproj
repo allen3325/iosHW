@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970C0F68271ACD0000A17324 /* ContentViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970C0F67271ACD0000A17324 /* ContentViewTwo.swift */; };
 		97785847270D868C00176C3B /* ClassTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97785846270D868C00176C3B /* ClassTestApp.swift */; };
 		97785849270D868C00176C3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97785848270D868C00176C3B /* ContentView.swift */; };
 		9778584B270D868E00176C3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9778584A270D868E00176C3B /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		970C0F67271ACD0000A17324 /* ContentViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTwo.swift; sourceTree = "<group>"; };
 		97785843270D868C00176C3B /* ClassTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97785846270D868C00176C3B /* ClassTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTestApp.swift; sourceTree = "<group>"; };
 		97785848270D868C00176C3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				97785846270D868C00176C3B /* ClassTestApp.swift */,
 				97785848270D868C00176C3B /* ContentView.swift */,
+				970C0F67271ACD0000A17324 /* ContentViewTwo.swift */,
 				97F1C6A32716F7BD0048F3E6 /* Mouth.swift */,
 				97F1C69F2716F7130048F3E6 /* Bat.swift */,
 				97F1C69D2716F0D50048F3E6 /* Belt.swift */,
@@ -287,6 +290,7 @@
 				97F1C69A2716ED280048F3E6 /* BeltLine.swift in Sources */,
 				97F1C69E2716F0D50048F3E6 /* Belt.swift in Sources */,
 				97785849270D868C00176C3B /* ContentView.swift in Sources */,
+				970C0F68271ACD0000A17324 /* ContentViewTwo.swift in Sources */,
 				97D0F0C62716D178006031C0 /* Cloak.swift in Sources */,
 				97785847270D868C00176C3B /* ClassTestApp.swift in Sources */,
 				97F1C6A42716F7BD0048F3E6 /* Mouth.swift in Sources */,
