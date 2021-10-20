@@ -50,6 +50,7 @@ struct ContentViewTwo: View {
                 .font(Font.title)
                 .offset(x: 0, y: 150)
         }
+        .background(Image("gotham").resizable().ignoresSafeArea())
     }
 }
 
