@@ -10,23 +10,27 @@ import SwiftUI
 
 struct changeIcon: View{
     var body: some View{
-        HStack{
+        VStack{
             CustomHeader1(name: "點選你想換的icon")
-            Button (action:{
-                UIApplication.shared.setAlternateIconName(nil)
-            }) {
-                Image("icon")
-                    .resizable()
-                    .scaledToFit()
+                .frame(height: 100)
+            HStack{
+                Button (action:{
+                    UIApplication.shared.setAlternateIconName(nil)
+                }) {
+                    Image("icon")
+                        .resizable()
+                        .scaledToFit()
+                }
+
+                Button (action:{
+                    UIApplication.shared.setAlternateIconName("icon2")
+                }) {
+                    Image("icon2")
+                        .resizable()
+                        .scaledToFit()
+                }
             }
 
-            Button (action:{
-                UIApplication.shared.setAlternateIconName("icon2")
-            }) {
-                Image("icon2")
-                    .resizable()
-                    .scaledToFit()
-            }
         }
     }
 }
