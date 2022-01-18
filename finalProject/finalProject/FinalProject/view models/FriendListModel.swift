@@ -1,40 +1,19 @@
 //
-//  FriendList.swift
-//  HW4
+//  FriendListModel.swift
+//  FinalProject
 //
-//  Created by 張哲瑋 on 2021/12/1.
+//  Created by 張哲瑋 on 2021/12/8.
 //
 
 import Foundation
 import SwiftUI
 
-struct FriendList:View{
-    @Binding var id:String
-    @State var items = [getPlayerSummary.resultTwo.player]()
+class FriendListModel: ObservableObject{
     
-    var body: some View{
-        NavigationView{
-            List{
-                ForEach(items, id: \.steamid){ item in
-                    ItemRow(item: item)
-                }
-            }.onAppear {
-                if items.isEmpty{
-                    fetchFriendList(term: id)
-                }
-            }
-        }
-    }
+    @Published var items = [getPlayerSummary.resultTwo.player]()
     
-    struct ItemRow: View {
-        let item: getPlayerSummary.resultTwo.player
-        var body: some View {
-            VStack(alignment: .leading) {
-                Text(item.personaname)
-                    .bold()
-                AsyncImage(url: item.avatarmedium)
-            }
-        }
+    init(id: String){
+        fetchFriendList(term: id)
     }
     
     func fetchFriendList(term: String) {
@@ -52,7 +31,7 @@ struct FriendList:View{
                             for friend in searchResponse.friendslist.friends{
                                 idArr.append(friend.steamid)
                             }
-                            print(idArr)
+//                            print(idArr)
                             for id in idArr{
                                 let urlTwo = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=DB926456846A627A74B8F558AA0F18F2&steamids=\(id)"
                                 if let urlTwo = URL(string: urlTwo) {
@@ -68,7 +47,9 @@ struct FriendList:View{
                                                 } else {
                                                     //                                                    fetchedData = true
                                                     //                                                    haveData = true
-                                                    items.append(searchResponse.response.players[0])
+                                                    DispatchQueue.main.async {
+                                                        self.items.append(searchResponse.response.players[0])
+                                                    }
                                                 }
 //                                                print(searchResponse.response.players[0].personaname)
                                             } catch {

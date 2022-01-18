@@ -22,14 +22,12 @@ struct tmp:View{
     @State private var showAlert = false
     @State private var alertTitle = ""
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 25.152, longitude: 121.780), span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003))
-    @State var bgColor = Color.white
-    
-    
-    
+    @EnvironmentObject var settings: UserSettings
+
     var body: some View{
         ScrollView {
             VStack{
-                ColorPicker("設定背景顏色", selection: $bgColor)
+                ColorPicker("設定背景顏色", selection: $settings.bgcolor)
                     .padding()
                     .scaledToFit()
                     .frame(width: 400, height: 100)
@@ -107,12 +105,7 @@ struct tmp:View{
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(bgColor)
-    }
-}
-
-struct tmp_Previews: PreviewProvider {
-    static var previews: some View {
-        tmp()
+        .background(settings.bgcolor)
+        .navigationBarHidden(true)
     }
 }
